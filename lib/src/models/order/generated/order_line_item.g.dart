@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of '../order_line_item.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+OrderLineItemDTO _$OrderLineItemDTOFromJson(
+  Map<String, dynamic> json,
+) => OrderLineItemDTO(
+  id: json['id'] as String,
+  title: json['title'] as String,
+  subtitle: json['subtitle'] as String?,
+  thumbnail: json['thumbnail'] as String?,
+  variantId: json['variant_id'] as String?,
+  productId: json['product_id'] as String?,
+  productTitle: json['product_title'] as String?,
+  productDescription: json['product_description'] as String?,
+  productSubtitle: json['product_subtitle'] as String?,
+  productTypeId: json['product_type_id'] as String?,
+  productType: json['product_type'] as String?,
+  productCollection: json['product_collection'] as String?,
+  productHandle: json['product_handle'] as String?,
+  variantSku: json['variant_sku'] as String?,
+  variantBarcode: json['variant_barcode'] as String?,
+  variantTitle: json['variant_title'] as String?,
+  variantOptionValues: json['variant_option_values'] as Map<String, dynamic>?,
+  requiresShipping: json['requires_shipping'] as bool,
+  isDiscountable: json['is_discountable'] as bool,
+  isGiftcard: json['is_giftcard'] as bool,
+  isTaxInclusive: json['is_tax_inclusive'] as bool,
+  compareAtUnitPrice: (json['compare_at_unit_price'] as num?)?.toDouble(),
+  unitPrice: (json['unit_price'] as num).toDouble(),
+  quantity: (json['quantity'] as num).toInt(),
+  taxLines: (json['tax_lines'] as List<dynamic>?)
+      ?.map((e) => OrderLineItemTaxLineDTO.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  adjustments: (json['adjustments'] as List<dynamic>?)
+      ?.map(
+        (e) => OrderLineItemAdjustmentDTO.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  detail: OrderItemDTO.fromJson(json['detail'] as Map<String, dynamic>),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  metadata: json['metadata'] as Map<String, dynamic>?,
+  originalTotal: json['original_total'] as String,
+  originalSubtotal: json['original_subtotal'] as String,
+  originalTaxTotal: json['original_tax_total'] as String,
+  itemTotal: json['item_total'] as String,
+  itemSubtotal: json['item_subtotal'] as String,
+  itemTaxTotal: json['item_tax_total'] as String,
+  total: json['total'] as String,
+  subtotal: json['subtotal'] as String,
+  taxTotal: json['tax_total'] as String,
+  discountTotal: json['discount_total'] as String,
+  discountTaxTotal: json['discount_tax_total'] as String,
+  refundableTotal: json['refundable_total'] as String,
+  refundableTotalPerUnit: json['refundable_total_per_unit'] as String,
+);
+
+Map<String, dynamic> _$OrderLineItemDTOToJson(OrderLineItemDTO instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+      'thumbnail': instance.thumbnail,
+      'variant_id': instance.variantId,
+      'product_id': instance.productId,
+      'product_title': instance.productTitle,
+      'product_description': instance.productDescription,
+      'product_subtitle': instance.productSubtitle,
+      'product_type_id': instance.productTypeId,
+      'product_type': instance.productType,
+      'product_collection': instance.productCollection,
+      'product_handle': instance.productHandle,
+      'variant_sku': instance.variantSku,
+      'variant_barcode': instance.variantBarcode,
+      'variant_title': instance.variantTitle,
+      'variant_option_values': instance.variantOptionValues,
+      'requires_shipping': instance.requiresShipping,
+      'is_discountable': instance.isDiscountable,
+      'is_giftcard': instance.isGiftcard,
+      'is_tax_inclusive': instance.isTaxInclusive,
+      'compare_at_unit_price': instance.compareAtUnitPrice,
+      'unit_price': instance.unitPrice,
+      'quantity': instance.quantity,
+      'tax_lines': instance.taxLines,
+      'adjustments': instance.adjustments,
+      'detail': instance.detail,
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'metadata': instance.metadata,
+      'original_total': instance.originalTotal,
+      'original_subtotal': instance.originalSubtotal,
+      'original_tax_total': instance.originalTaxTotal,
+      'item_total': instance.itemTotal,
+      'item_subtotal': instance.itemSubtotal,
+      'item_tax_total': instance.itemTaxTotal,
+      'total': instance.total,
+      'subtotal': instance.subtotal,
+      'tax_total': instance.taxTotal,
+      'discount_total': instance.discountTotal,
+      'discount_tax_total': instance.discountTaxTotal,
+      'refundable_total': instance.refundableTotal,
+      'refundable_total_per_unit': instance.refundableTotalPerUnit,
+    };
