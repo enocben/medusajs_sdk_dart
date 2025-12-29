@@ -18,7 +18,8 @@ Le SDK devra être :
 ## 2. Références fonctionnelles
 
 * Documentation de référence : [https://docs.medusajs.com/resources/js-sdk](https://docs.medusajs.com/resources/js-sdk)
-* SDK source d’inspiration : `@medusajs/js-sdk`
+* SDK source d’inspiration : [https://github.com/medusajs/js-sdk](https://github.com/medusajs/js-sdk)
+* Inspirations pour la génération : [https://github.com/medusajs/medusa/tree/develop/packages/core/js-sdk](https://github.com/medusajs/medusa/tree/develop/packages/core/js-sdk)
 
 Le SDK Dart doit reprendre **les concepts**, **pas le code**.
 
@@ -44,6 +45,7 @@ final client = MedusaClient(
 * `apiKey` (optionnel)
 * Headers custom
 * Timeout réseau
+* Tout le code générer doit être dans le dossier generated qui doit se situer dans le même dossier que le fichier source.
 
 ---
 

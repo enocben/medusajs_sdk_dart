@@ -1,0 +1,140 @@
+import 'package:json_annotation/json_annotation.dart';
+import '../common/money.dart';
+
+part 'generated/tax_line.g.dart';
+
+/// The tax line details
+@JsonSerializable()
+class TaxLineDTO {
+  /// The ID of the tax line
+  final String id;
+
+  /// The description of the tax line
+  final String? description;
+
+  /// The ID of the associated tax rate
+  @JsonKey(name: 'tax_rate_id')
+  final String? taxRateId;
+
+  /// The code of the tax line
+  final String code;
+
+  /// The rate of the tax line
+  final double rate;
+
+  /// The ID of the associated provider
+  @JsonKey(name: 'provider_id')
+  final String? providerId;
+
+  /// When the tax line was created
+  @JsonKey(name: 'created_at')
+  final DateTime createdAt;
+
+  /// When the tax line was updated
+  @JsonKey(name: 'updated_at')
+  final DateTime updatedAt;
+
+  const TaxLineDTO({
+    required this.id,
+    this.description,
+    this.taxRateId,
+    required this.code,
+    required this.rate,
+    this.providerId,
+    required this.createdAt,
+    required this.updatedAt,
+  });
+
+  factory TaxLineDTO.fromJson(Map<String, dynamic> json) =>
+      _$TaxLineDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TaxLineDTOToJson(this);
+}
+
+/// The line item tax line details
+@JsonSerializable()
+class LineItemTaxLineDTO extends TaxLineDTO {
+  /// The ID of the associated line item
+  @JsonKey(name: 'item_id')
+  final String itemId;
+
+  /// The total tax relative to the item
+  final BigNumberValue total;
+
+  /// The subtotal tax relative to the item
+  final BigNumberValue subtotal;
+
+  /// The raw total tax relative to the item
+  @JsonKey(name: 'raw_total')
+  final BigNumberRawValue rawTotal;
+
+  /// The raw subtotal tax relative to the item
+  @JsonKey(name: 'raw_subtotal')
+  final BigNumberRawValue rawSubtotal;
+
+  const LineItemTaxLineDTO({
+    required super.id,
+    super.description,
+    super.taxRateId,
+    required super.code,
+    required super.rate,
+    super.providerId,
+    required super.createdAt,
+    required super.updatedAt,
+    required this.itemId,
+    required this.total,
+    required this.subtotal,
+    required this.rawTotal,
+    required this.rawSubtotal,
+  });
+
+  factory LineItemTaxLineDTO.fromJson(Map<String, dynamic> json) =>
+      _$LineItemTaxLineDTOFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$LineItemTaxLineDTOToJson(this);
+}
+
+/// The shipping method tax line details
+@JsonSerializable()
+class ShippingMethodTaxLineDTO extends TaxLineDTO {
+  /// The ID of the associated shipping method
+  @JsonKey(name: 'shipping_method_id')
+  final String shippingMethodId;
+
+  /// The total tax relative to the shipping method
+  final BigNumberValue total;
+
+  /// The subtotal tax relative to the shipping method
+  final BigNumberValue subtotal;
+
+  /// The raw total tax relative to the shipping method
+  @JsonKey(name: 'raw_total')
+  final BigNumberRawValue rawTotal;
+
+  /// The raw subtotal tax relative to the shipping method
+  @JsonKey(name: 'raw_subtotal')
+  final BigNumberRawValue rawSubtotal;
+
+  const ShippingMethodTaxLineDTO({
+    required super.id,
+    super.description,
+    super.taxRateId,
+    required super.code,
+    required super.rate,
+    super.providerId,
+    required super.createdAt,
+    required super.updatedAt,
+    required this.shippingMethodId,
+    required this.total,
+    required this.subtotal,
+    required this.rawTotal,
+    required this.rawSubtotal,
+  });
+
+  factory ShippingMethodTaxLineDTO.fromJson(Map<String, dynamic> json) =>
+      _$ShippingMethodTaxLineDTOFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$ShippingMethodTaxLineDTOToJson(this);
+}
